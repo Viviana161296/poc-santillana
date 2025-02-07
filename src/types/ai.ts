@@ -42,3 +42,18 @@ export interface GenerationParams {
     questionCount?: number;
   };
 }
+
+export interface GeneratedContent {
+  id: string;
+  userId: string;
+  promptId: string;
+  promptName: string;
+  inputParameters: Record<string, any>;
+  generatedText: string;
+  status: string;
+  errorMessage: string | null;
+  createdAt: string;
+  content?: {
+    completion: string;
+  };
+}

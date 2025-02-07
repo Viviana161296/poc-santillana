@@ -20,8 +20,10 @@ interface SaveContentParams {
   skillLevel: 'basic' | 'intermediate' | 'advanced';
 }
 
+console.log(API_URL);
+
 export async function generateContent(params: GenerationParams) {
-  const { data } = await axios.post(`${API_URL}/generate`, params);
+  const { data } = await axios.post(`${API_URL}/generate_content`, params);
   return data;
 }
 

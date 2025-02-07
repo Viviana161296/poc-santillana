@@ -1,18 +1,17 @@
 import { Router } from 'express';
-import { contentGenerationController } from '../controllers/contentGeneration';
-import { validate } from '../middleware/validate';
-import { contentGenerationSchema } from '../schemas/contentGeneration';
+import { contentGenerationController } from '../controllers/contentGeneration.ts';
+import { contentGenerationSchema } from '../schemas/contentGeneration.ts';
 
 const router = Router();
 
-router.post('/generate', 
-  validate(contentGenerationSchema.generate), 
-  contentGenerationController.generate
+router.post(
+  '/generate_content',
+  contentGenerationController.generate // Controlador
 );
 
-router.post('/save',
-  validate(contentGenerationSchema.save),
-  contentGenerationController.save
+router.post(
+  '/save',
+  contentGenerationController.save // Controlador
 );
 
 export default router;
